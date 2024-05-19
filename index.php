@@ -3,7 +3,7 @@
 Plugin Name: My Interactive Map
 Plugin URI: https://github.com/tichmajena/imj-wp-interactive-map.git
 Description: This is a custom interactive map plugin powered by 'D3 JS' and 'Svelte JS'.
-Version: 0.1.0
+Version: 0.1.1
 Author: Tich Majena
 Author URI: https://github.com/tichmajena/imj-wp-interactive-map/
 License: GPL2
