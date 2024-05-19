@@ -15,13 +15,13 @@ $countries;
 function display_map($attr)
 {
     $options = shortcode_atts([
-        'countries' => ["Zimbabwe", "South Africa", "Zambia", "Mozambique", "Botswana", "Namibia", "Lesotho", "Swaziland"],
+        'countries' => '["Zimbabwe", "South Africa", "Zambia", "Mozambique", "Botswana", "Namibia", "Lesotho", "Swaziland"]',
         // Add more parameters here if needed
     ], $attr);
     updateGlobal($countries, $options);
     // Access the shortcode parameters using $atts['param1'], $atts['param2'], etc.
     $json = json_encode($options["countries"]);
-    return '<div id="app" data-countries="' .  join("_", $options["countries"]) . '"></div>';
+    return '<div id="app" data-countries="' .  join("_", json_decode($options["countries"])) . '"></div>';
 }
 
 

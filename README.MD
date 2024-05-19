@@ -20,7 +20,7 @@ This is a WordPress plugin called Interactive Map that allows you to create and 
 Use as `Shortcode`
 
 ```
-[my_map countries=["Zimbabwe", "Zambia", "South Africa"]]
+[my_map countries='["Zimbabwe", "Zambia", "South Africa"]' ]
 
 ```
 
