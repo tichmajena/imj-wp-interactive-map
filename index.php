@@ -2,8 +2,8 @@
 /*
 Plugin Name: My Interactive Map
 Plugin URI: https://github.com/tichmajena/imj-wp-interactive-map.git
-Description: This is a custom interactive map plugin powered by 'D3 JS' and 'Svelte JS'.
-Version: 0.1.1
+Description: This is a custom interactive map plugin powered by 'D3 JS' and 'Svelte JS'. Use as `Shortcode`, pass the countries as an underscore `_` seperated string. e.g. `[my_map countries="Zimbabwe_Zambia_South Africa_Namibia"]`
+Version: 0.1.2
 Author: Tich Majena
 Author URI: https://github.com/tichmajena/imj-wp-interactive-map/
 License: GPL2
@@ -15,13 +15,14 @@ $countries;
 function display_map($attr)
 {
     $options = shortcode_atts([
-        'countries' => '["Zimbabwe", "South Africa", "Zambia", "Mozambique", "Botswana", "Namibia", "Lesotho", "Swaziland"]',
+        'countries' => 'Zimbabwe',
         // Add more parameters here if needed
     ], $attr);
-    updateGlobal($countries, $options);
+    //$k = array(2) { [0]=> string(35) "countries='[“Zimbabwe”," [1]=> string(21) "“Namibia”" }];
+    //updateGlobal($countries, $options);
     // Access the shortcode parameters using $atts['param1'], $atts['param2'], etc.
-    $json = json_encode($options["countries"]);
-    return '<div id="app" data-countries="' .  join("_", json_decode($options["countries"])) . '"></div>';
+    //$json = json_encode($options["countries"]);
+    return '<div id="app" data-test-"test" data-countries="' .  $options["countries"] . '"></div>';
 }
 
 
@@ -47,17 +48,6 @@ function updateGlobal(&$countries, $newValues)
 function enqueue_scripts()
 {
     wp_enqueue_script_module('map-script', plugin_dir_url(__FILE__) . 'dist/assets/index.js', [], true);
-    wp_localize_script('map-script', 'mapData', array(
-        'countries' => getAttr($countries)
-        // 'apiUrl' => 'https://example.com/api/map',
-        // 'mapOptions' => array(
-        //     'zoom' => 10,
-        //     'center' => array(
-        //         'lat' => 37.7749,
-        //         'lng' => -122.4194
-        //     )
-        // )
-    ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 

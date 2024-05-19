@@ -17,10 +17,10 @@ This is a WordPress plugin called Interactive Map that allows you to create and 
 
 ## Usage
 
-Use as `Shortcode`
+Use as `Shortcode`, pass the countries as an underscore `_` seperated string.
 
 ```
-[my_map countries='["Zimbabwe", "Zambia", "South Africa"]' ]
+[my_map countries="Zimbabwe_Zambia_South Africa_Namibia"]
 
 ```
 
