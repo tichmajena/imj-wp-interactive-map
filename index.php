@@ -59,15 +59,15 @@ add_action('wp_enqueue_scripts', 'enqueue_styles');
 
 add_shortcode('my_map', 'display_map');
 
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://github.com/tichmajena/imj-wp-interactive-map/',
-    __FILE__,
-    'imj-wp-interactive-map'
-);
+// require 'plugin-update-checker/plugin-update-checker.php';
+// $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+//     'https://github.com/tichmajena/imj-wp-interactive-map/',
+//     __FILE__,
+//     'imj-wp-interactive-map'
+// );
 
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
+// //Set the branch that contains the stable release.
+// $myUpdateChecker->setBranch('main');
 
-//Optional: If you're using a private repository, specify the access token like this:
-$myUpdateChecker->setAuthentication('your-token-here');
+// //Optional: If you're using a private repository, specify the access token like this:
+// $myUpdateChecker->setAuthentication('your-token-here');
