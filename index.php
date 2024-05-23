@@ -18,7 +18,7 @@ function display_map($attr)
         'countries' => 'Zimbabwe',
         // Add more parameters here if needed
     ], $sanitized_string);
-
+    var_dump($sanitized_string);
     return '<div id="imj_d3_app" data-test-"test" data-countries="' .  $options["countries"] . '"></div>';
 }
 
