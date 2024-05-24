@@ -3,7 +3,7 @@
 Plugin Name: My Interactive Map
 Plugin URI: https://github.com/tichmajena/imj-wp-interactive-map.git
 Description: This is a custom interactive map plugin powered by 'D3 JS' and 'Svelte JS'. Use as `Shortcode`, pass the countries as an underscore `_` seperated string. e.g. `[my_map countries="Zimbabwe_Zambia_South Africa_Namibia"]`
-Version: 0.1.5
+Version: 0.1.6
 Author: Tich Majena
 Author URI: https://github.com/tichmajena/imj-wp-interactive-map/
 License: GPL2
@@ -13,7 +13,7 @@ License: GPL2
 function display_map($attr)
 {
 
-    $sanitized_string = preg_replace('/[^a-zA-Z0-9_]/', '', $attr);
+    $sanitized_string = preg_replace('/[^a-zA-Z0-9_\s]/', '', $attr);
     $options = shortcode_atts([
         'countries' => 'Zimbabwe',
         // Add more parameters here if needed
